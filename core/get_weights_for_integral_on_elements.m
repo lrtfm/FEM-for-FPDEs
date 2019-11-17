@@ -31,7 +31,7 @@ function [w, gps, gp, n] = get_weights_for_integral_on_elements(mesh_info, fun, 
 
 	% fun is a function handle
     if isa(fun, 'function_handle')
-        f = cellfun(fun, gps);   % fun: $M_{D \times n} -> v_{1 \times n}$
+        f = cellfun(fun, gps, 'UniformOutput',false);   % fun: $M_{D \times n} -> v_{1 \times n}$
         w = cell2mat(f).*cell2mat(ws);
         w = w';
         % for i = 1:number_of_elements

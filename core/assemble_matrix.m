@@ -21,7 +21,7 @@ function K = assemble_matrix(mesh_info,...
         tol = 10^(-10);
     end
     if nargin < 8
-        dir_fmt = get_direction_fmt(direction);
+        dir_fmt = get_direction_fmt(alpha_dir);
         fmt = ['(%g:', dir_fmt, ')'];
         fmts = ['AM:', fmt, ', ', fmt];
         msg = sprintf(fmts, alpha, alpha_dir, beta, beta_dir);

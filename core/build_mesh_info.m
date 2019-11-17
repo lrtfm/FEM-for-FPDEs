@@ -41,6 +41,7 @@ function mesh_info = build_mesh_info(mesh)
     [A_inv, vols] = get_inv_A_and_vol(nodes, sort_elements);
     mesh_info.A_inv = A_inv;
     mesh_info.vols = vols;
+    mesh_info.dim = dim;
     Timer.endwatch();
 end
 
